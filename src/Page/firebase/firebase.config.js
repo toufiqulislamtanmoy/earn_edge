@@ -10,17 +10,10 @@ const firebaseConfig = {
   projectId:import.meta.env.VITE_projectId,
   storageBucket:import.meta.env.VITE_storageBucket,
   messagingSenderId:import.meta.env.VITE_messagingSenderId,
-  appId:import.meta.env.VITE_appId
+  appId:import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-export default app;
-
-// apiKey: "AIzaSyC6s-WwejQG_8_N5WdeOup3cQlIvH2e8v4",
-//   authDomain: "earnedge-14923.firebaseapp.com",
-//   projectId: "earnedge-14923",
-//   storageBucket: "earnedge-14923.appspot.com",
-//   messagingSenderId: "955676027678",
-//   appId: "1:955676027678:web:426e08d28512319e02b70f"
+export default app

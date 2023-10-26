@@ -1,18 +1,18 @@
 import { Link, useLocation } from "react-router-dom";
-import userprofile from "../../assets/images/user.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoins, faCommentsDollar, faEuroSign } from "@fortawesome/free-solid-svg-icons";
+import { faCoins, faCommentsDollar, faEuroSign, } from "@fortawesome/free-solid-svg-icons";
+import { AuthContext } from "../../Page/Provider/AuthProviders";
+import { useContext } from "react";
 const Navbar = () => {
     const location = useLocation();
-    const user = true;
-    // const { user, logout } = useContext(AuthContext);
+    // const user = true;
+    const { user, logout } = useContext(AuthContext);
 
     const handelLogOut = async () => {
-        // logout();
-        // await refetch();
+        logout();
     }
 
-
+console.log(user);
 
     return (
         <div className="navbar bg-[#c6dcf9] rounded-md bg-clip-padding backdrop-filter  bg-opacity-70 px-10">
@@ -60,7 +60,7 @@ const Navbar = () => {
                                 <div tabIndex={0} className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
                                     <div className="card-body">
                                         <span className="font-bold text-lg">0.21 <FontAwesomeIcon icon={faEuroSign} /></span>
-                                        
+
                                         <div className="card-actions">
                                             <Link
                                                 to="/userdashboard/userCart"
@@ -74,9 +74,10 @@ const Navbar = () => {
                                 </div>
                             </div>
                             <div className="dropdown dropdown-end">
-                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <label tabIndex={0} className="btn btn-ghost avatar">
                                     <div className="w-10 rounded-full">
-                                        <img src={userprofile} />
+                                        <img src={user.photoURL}  title={user.displayName}/>
+                                        <h2></h2>
                                     </div>
                                 </label>
                                 <ul tabIndex={0} className="z-20 menu menu-sm dropdown-content mt-3 p-2 shadow rounded-box w-52 bg-base-100">
@@ -92,7 +93,10 @@ const Navbar = () => {
                             </div>
                         </div>
                         :
-                        <Link to="/signin" className={`hover:text-info hover:transition-colors hover:duration-500 ${location.pathname === '/signin' ? 'text-info' : ''}`}>Sign In</Link>
+
+                        <div>
+                            <Link to="/login">Sign In</Link>
+                        </div>
                 }
             </div>
         </div>
