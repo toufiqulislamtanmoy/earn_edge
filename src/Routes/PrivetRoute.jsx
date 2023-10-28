@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { AuthContext } from "../Pages/Provider/AuthProviders";
+
 import { Dna } from "react-loader-spinner";
+import { AuthContext } from "../Page/Provider/AuthProviders";
 
 const PrivetRoute = ({ children }) => {
   const location = useLocation();

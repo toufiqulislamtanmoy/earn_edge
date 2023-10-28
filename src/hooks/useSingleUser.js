@@ -4,11 +4,11 @@ import { AuthContext } from "../Page/Provider/AuthProviders";
 
 
 const useSingleUser = () => {
-    const {user} = useContext(AuthContext);
+    const {user:{email}} = useContext(AuthContext);
     const { data: singleUser = [], isLoading: loading, refetch:userrefetch } = useQuery( 
         ['singleUser'], 
         async () => {
-            const res = await fetch(`http://localhost:5000/singleuser/${user.email}`);
+            const res = await fetch(`https://rw-server-gkzvfj4px-toufiqulislamtanmoy.vercel.app/singleuser/${email}`);
             return res.json();
             
         }

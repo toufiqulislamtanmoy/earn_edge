@@ -20,7 +20,7 @@ const VerifyPhone = () => {
 
 
     useEffect(() => {
-        email && fetch(`http://localhost:5000/singleuser/${email}`).then(res => res.json()).then(data => {
+        email && fetch(`https://rw-server-gkzvfj4px-toufiqulislamtanmoy.vercel.app/singleuser/${email}`).then(res => res.json()).then(data => {
             setMaskPhone(maskPhoneNumber(data.phone))
         })
     }, [email])
@@ -60,7 +60,7 @@ const VerifyPhone = () => {
 
         console.log(otp, data);
 
-        email && fetch(`http://localhost:5000/users/update/${email}`, {
+        email && fetch(`https://rw-server-gkzvfj4px-toufiqulislamtanmoy.vercel.app/users/update/${email}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

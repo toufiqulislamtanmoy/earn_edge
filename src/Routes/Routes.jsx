@@ -6,6 +6,8 @@ import Home from "../Page/Home/Home";
 import Login from "../Page/Login/Login";
 import Signup from "../Page/Signup/Signup";
 import VerifyPhone from "../Page/VerifyPhone/VerifyPhone";
+import MyEye from "../Page/MyEye/MyEye";
+import PrivetRoute from "./PrivetRoute";
 
 
 const router = createBrowserRouter([
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
                 path: "/verify",
                 element: <VerifyPhone />
             },
+            {
+                path: "/MyEye",
+                element: <PrivetRoute><MyEye /></PrivetRoute>
+            }
         ]
     }
     

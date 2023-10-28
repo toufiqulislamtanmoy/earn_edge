@@ -6,7 +6,7 @@ const FQA = () => {
 
     const [fqa, setFqa] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/fqa").then(res => res.json()).then(data => setFqa(data))
+        fetch("https://rw-server-gkzvfj4px-toufiqulislamtanmoy.vercel.app/fqa").then(res => res.json()).then(data => setFqa(data))
     }, [])
     return (
         <div className='my-10 mx-5'>

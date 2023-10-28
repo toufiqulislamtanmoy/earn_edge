@@ -20,24 +20,24 @@ const Signup = () => {
 
 
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const { createUser,updateUserProfile } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
 
     useEffect(() => {
         console.log(phone);
     }, [phone]);
 
-    const referralCode = Math.floor(100000 + Math.random() * 900000);
+    const mycode = Math.floor(100000 + Math.random() * 900000);
     const imgurl = "https://i.ibb.co/x3LC9CX/user.png";
     const onSubmit = data => {
-        const userDetails = { ...data, phone, balance: 0.21, referralCode, restricted: false };
+        const userDetails = { ...data, phone, balance: 0.21, myReferCode:mycode, restricted: false };
         console.log(userDetails);
 
         createUser(data.email, data.password).then((logedUser) => {
             console.log(logedUser);
             updateUserProfile(data.name, imgurl).then(() => {
                 /********Insert user details in the database********/
-                fetch('http://localhost:5000/users', {
+                fetch('https://rw-server-gkzvfj4px-toufiqulislamtanmoy.vercel.app/users', {
                     method: "POST",
                     headers: {
                         'content-type': 'application/json'
@@ -48,7 +48,7 @@ const Signup = () => {
                         // reset();
                         // logout();
                         console.log(data)
-                        navigate("/", { replace: true });
+                        navigate("/verify", { replace: true });
                     });
             });
         }).catch((error) => {
@@ -128,9 +128,19 @@ const Signup = () => {
                                             {errors.password?.type === 'required' && <span className="text-red-500">This field is required</span>}
                                         </div>
 
+                                        {/* ReferCode */}
+
+                                        <div className="form-control">
+                                            <label className="label">
+                                                <span className="label-text">Refer Code</span>
+                                            </label>
+                                            <input {...register("referCode")} type="text" placeholder="Refer Code" className="input input-bordered" />
+                                          
+                                        </div>
+
                                         {/* Submit Button */}
                                         <div className="form-control mt-6">
-                                            <button className="btn btn bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-all  duration-300 delay-100">Sign Up</button>
+                                            <button className="btn bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-all  duration-300 delay-100">Sign Up</button>
                                         </div>
                                     </form>
                                 </div>
