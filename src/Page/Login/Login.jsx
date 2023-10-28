@@ -4,18 +4,18 @@ import loginanimation from "../../assets/animation/loginanimation1.json"
 import Lottie from "lottie-react";
 import { Link, useNavigate } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
-import faviconFacebook from "../../../public/facebook.svg"
+import favCon from "../../../public/faviocn.svg"
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProviders";
 import Swal from "sweetalert2";
 import useLoading from "../../hooks/useLoadding";
 import { FaFacebook } from "react-icons/fa";
 const Login = () => {
-    useTitle("Facebook | Login", faviconFacebook);
+    useTitle("Earn Edge | Login", favCon);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { loginUser } = useContext(AuthContext);
     const navigate = useNavigate();
-    const isLoading = useLoading();
+    const isLoading = useLoading(3000);
     const destination = location.state?.from?.pathname || "/"
 
     // Login with email and password
@@ -27,14 +27,6 @@ const Login = () => {
             const user = loggedInUser.user;
             console.log(user);
             navigate(destination, { replace: true })
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Login Successful',
-                // title: `${destination}`,
-                showConfirmButton: true,
-            })
-            // ...
         })
             .catch((error) => {
                 const errorCode = error.code;

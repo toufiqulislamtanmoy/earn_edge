@@ -9,11 +9,14 @@ import PhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css'
 import Hold from "../../Components/Hold/Hold";
 import useLoading from "../../hooks/useLoadding";
+import useTitle from "../../hooks/useTitle";
+import favCon from "../../../public/faviocn.svg"
 
 const Signup = () => {
+    useTitle("Earn Edge | Sign up", favCon);
     const [phone, setPhone] = useState('');
 
-    const isLoading = useLoading();
+    const isLoading = useLoading(3000);
 
 
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -60,7 +63,7 @@ const Signup = () => {
     };
 
     return (
-        <>
+        <div className="">
             {
                 isLoading ? <Hold text={"Redirecting to Sign Up page"} /> :
                     <div className="hero min-h-screen my-16 lg:my-0 bg-[#F9F9FF]">
@@ -136,7 +139,7 @@ const Signup = () => {
                     </div>
             }
 
-        </>
+        </div>
     );
 };
 

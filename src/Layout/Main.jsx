@@ -7,11 +7,11 @@ import useLoading from "../hooks/useLoadding";
 const Main = () => {
     const location = useLocation();
     console.log(location)
-    const newLayout = location.pathname.includes('login') || location.pathname.includes('signup')
-    const isLoading = useLoading();
+    const newLayout = location.pathname.includes('login') || location.pathname.includes('signup') || location.pathname.includes('verify')
+    const isLoading = useLoading(3000);
 
     return (
-        <div>
+        <div className="">
             {isLoading ? <Hold text={"🚀 Launching the experience, please wait.."}/> : (
                 <>
                     {newLayout || <Navbar />}

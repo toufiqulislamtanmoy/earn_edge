@@ -7,7 +7,7 @@ import useLoading from "../../hooks/useLoadding";
 
 const Home = () => {
     useTitle("Earn Edge| Home",favCon);
-    const isLoading = useLoading();
+    const isLoading = useLoading(3000);
     return (
         <div>
             {isLoading ? <Hold text={"Almost Ready Wait a Moment"}/> :

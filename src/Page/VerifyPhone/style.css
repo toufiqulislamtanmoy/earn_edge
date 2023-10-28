@@ -1,0 +1,31 @@
+/* CSS */
+.OtpInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.OtpInput input {
+    width: 40px; /* Set the width of each input field */
+    height: 40px; /* Set the height of each input field */
+    font-size: 18px; /* Set the font size of the input text */
+    text-align: center; /* Center the text in the input field */
+    margin: 0 5px; /* Add some spacing between input fields */
+    border: 1px solid #ccc; /* Add a border to the input fields */
+    border-radius: 5px; /* Optional: Add rounded corners to the input fields */
+}
+
+.OtpInput span {
+    font-size: 18px; /* Set the font size of the separator */
+    margin: 0 10px; /* Add some spacing around the separator */
+}
+
+/* Optional: Add styles for focus and hover states */
+.OtpInput input:focus {
+    outline: none; /* Remove the default focus outline */
+    border-color: #007bff; /* Change the border color on focus */
+}
+
+.OtpInput input:hover {
+    border-color: #007bff; /* Change the border color on hover */
+}

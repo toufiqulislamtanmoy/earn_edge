@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-const useLoading = () => {
+const useLoading = (time) => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const timeout = setTimeout(() => {
             setIsLoading(false);
-        }, 3000); // 3000 milliseconds = 3 seconds
+        }, time); // 3000 milliseconds = 3 seconds
 
         return () => clearTimeout(timeout);
     }, []);
