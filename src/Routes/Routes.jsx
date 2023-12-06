@@ -8,6 +8,7 @@ import Signup from "../Page/Signup/Signup";
 import VerifyPhone from "../Page/VerifyPhone/VerifyPhone";
 import MyEye from "../Page/MyEye/MyEye";
 import PrivetRoute from "./PrivetRoute";
+import Tasks from "../Page/Tasks/Tasks";
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
             {
                 path: "/signup",
                 element: <Signup />
+            },
+            {
+                path: "/tasks",
+                element: <Tasks />
             },
             {
                 path: "/verify",

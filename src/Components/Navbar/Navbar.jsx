@@ -53,7 +53,7 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal px-1">
                     <li><Link className={`hover:text-info hover:transition-colors hover:duration-500 ${location.pathname === '/' ? 'text-info' : ''}`} to="/">Home</Link></li>
 
-                    <li><Link className={`hover:text-info hover:transition-colors hover:duration-500 ${location.pathname === '/task' ? 'text-info' : ''}`} to="/task">Tasks</Link></li>
+                    <li><Link className={`hover:text-info hover:transition-colors hover:duration-500 ${location.pathname === '/tasks' ? 'text-info' : ''}`} to="/tasks">Tasks</Link></li>
 
                     <li><Link className={`hover:text-info hover:transition-colors hover:duration-500 ${location.pathname === '/mytask' ? 'text-info' : ''}`} to="/mytask">My Task</Link></li>
 

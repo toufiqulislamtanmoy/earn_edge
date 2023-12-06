@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProviders";
 import Swal from "sweetalert2";
 import useLoading from "../../hooks/useLoadding";
-import { FaFacebook } from "react-icons/fa";
+
 const Login = () => {
     useTitle("Earn Edge | Login", favCon);
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -52,10 +52,10 @@ const Login = () => {
                             <div className="text-center lg:text-left">
                                 <h5 className="text-center">
                                     Do not have an account yet?
-                                    <Link className="" to="/signup"> </Link>
+                                    <Link className="link-primary" to="/signup">Create new for free!</Link>
 
                                     {/* Open the modal using document.getElementById('ID').showModal() method */}
-                                    <button className="text-blue-500" onClick={() => document.getElementById('my_modal_2').showModal()}>Create new for free!</button>
+                                    {/* <button className="text-blue-500" onClick={() => document.getElementById('my_modal_2').showModal()}>Create new for free!</button>
                                     <dialog id="my_modal_2" className="modal">
                                         <div className="modal-box text-center">
 
@@ -66,7 +66,7 @@ const Login = () => {
                                         <form method="dialog" className="modal-backdrop">
                                             <button>close</button>
                                         </form>
-                                    </dialog>
+                                    </dialog> */}
                                 </h5>
                                 <Lottie animationData={loginanimation} loop={true} />
                             </div>
